@@ -23,11 +23,6 @@
   )
   set bibliography(style: "turabian-fullnote-8")
 
-  set text(
-    font: "New Computer Modern",
-    size: 12pt,
-  )
-
   set par(
     justify: false,
     leading: 2em,
