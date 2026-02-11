@@ -8,6 +8,7 @@
   class: none,
   professor: none,
   paper-size: "us-letter",
+  body,
 ) = {
   set page(
     paper: paper-size,
@@ -62,4 +63,6 @@
   align(center)[#title]
 
   set par(first-line-indent: 0.5in)
+
+  body
 }
