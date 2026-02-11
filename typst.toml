@@ -1,0 +1,8 @@
+[package]
+name = "turabian"
+version = "0.1.0"
+entrypoint = "lib.typ"
+authors = ["multipixelone (Finn Rutis) <typst@finnrut.is>"]
+license = "MIT"
+description = "A Typst Template for the Chicago Turabian format"
+repository = "https://github.com/Multipixelone/typst-turabian"
