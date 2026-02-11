@@ -21,21 +21,10 @@
           ...
         }:
         let
-          mkDate =
-            longDate:
-            with builtins;
-            (concatStringsSep "-" [
-              (substring 0 4 longDate)
-              (substring 4 2 longDate)
-              (substring 6 2 longDate)
-            ]);
-          version = mkDate (self.lastModifiedDate or "19700101");
           src = self;
-          datesFile =
-            if builtins.pathExists (self + "/essay-dates.txt") then self + "/essay-dates.txt" else null;
-
-          papers = pkgs.callPackage ./packages/papers.nix {
-            inherit version src datesFile;
+          version = (fromTOML (builtins.readFile "${src}/typst.toml")).package.version;
+          turabian = pkgs.callPackage ./packages/turabian.nix {
+            inherit version src;
           };
         in
         {
@@ -46,8 +35,8 @@
           };
 
           packages = {
-            default = papers;
-            papers = papers;
+            default = turabian;
+            turabian = turabian;
           };
         };
     };

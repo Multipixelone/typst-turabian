@@ -6,3 +6,7 @@ authors = ["multipixelone (Finn Rutis) <typst@finnrut.is>"]
 license = "MIT"
 description = "A Typst Template for the Chicago Turabian format"
 repository = "https://github.com/Multipixelone/typst-turabian"
+
+[template]
+path = "template"
+entrypoint = "main.typ"
