@@ -26,8 +26,8 @@
   set par(
     justify: false,
     leading: 2em,
+    spacing: 2em,
     first-line-indent: 0.5in,
-    spacing: 2.5em,
   )
 
   // Title page
