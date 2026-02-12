@@ -1,6 +1,10 @@
 # Changelog
 
-All notable changes to this project will be documented in this file.
+## [0.2.1] - 2026-02-12
+
+### 📚 Documentation
+
+- Remove unneeded header([133bc81](https://github.com/Multipixelone/typst-turabian/commit/133bc817f22034b2c8532abdd0d7f7b72e05a175))
 
 ## [0.2.0] - 2026-02-12
 
