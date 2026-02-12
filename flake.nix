@@ -31,7 +31,24 @@
           devenv.shells.default = {
             packages = [
               pkgs.typst
+              pkgs.typstyle
+              pkgs.git-cliff
             ];
+          };
+
+          formatter = pkgs.nixfmt-rfc-style;
+
+          checks = {
+            nixfmt = pkgs.runCommandLocal "check-nixfmt" { nativeBuildInputs = [ pkgs.nixfmt-rfc-style ]; } ''
+              cd ${src}
+              nixfmt --check .
+              touch $out
+            '';
+            typstyle = pkgs.runCommandLocal "check-typstyle" { nativeBuildInputs = [ pkgs.typstyle ]; } ''
+              cd ${src}
+              typstyle format-all . --check
+              touch $out
+            '';
           };
 
           packages = {
