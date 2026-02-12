@@ -28,6 +28,14 @@ jobs:
         id: current
         run: |
           version=$(grep '^version' typst.toml | sed 's/version = "\(.*\)"/\1/')
+          if [ -z "$version" ]; then
+            echo "::error::Failed to read version from typst.toml"
+            exit 1
+          fi
+          if ! echo "$version" | grep -qE '^[0-9]+\.[0-9]+\.[0-9]+$'; then
+            echo "::error::Invalid semver format: $version"
+            exit 1
+          fi
           echo "version=$version" >> "$GITHUB_OUTPUT"
 
       - name: Compute next version
@@ -69,6 +77,14 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add typst.toml CHANGELOG.md
+          if git diff --cached --quiet; then
+            echo "::error::No changes to commit"
+            exit 1
+          fi
+          if git rev-parse "v${{ steps.next.outputs.version }}" >/dev/null 2>&1; then
+            echo "::error::Tag v${{ steps.next.outputs.version }} already exists"
+            exit 1
+          fi
           git commit -m "chore(release): v${{ steps.next.outputs.version }}"
           git tag "v${{ steps.next.outputs.version }}"
           git push origin HEAD --tags
