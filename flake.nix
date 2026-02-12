@@ -36,8 +36,6 @@
             DIRENV_LOG_FORMAT = "";
           };
 
-          formatter = pkgs.nixfmt-rfc-style;
-
           checks = {
             nixfmt = pkgs.runCommandLocal "check-nixfmt" { nativeBuildInputs = [ pkgs.nixfmt-rfc-style ]; } ''
               cd ${src}
@@ -50,6 +48,7 @@
               touch $out
             '';
           };
+          formatter = pkgs.nixfmt;
 
           packages = {
             default = turabian;
