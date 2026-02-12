@@ -1,6 +1,6 @@
 [package]
 name = "turabian"
-version = "0.2.1"
+version = "0.3.0"
 entrypoint = "lib.typ"
 authors = ["multipixelone (Finn Rutis) <typst@finnrut.is>"]
 license = "MIT"

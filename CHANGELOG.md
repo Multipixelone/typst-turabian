@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.3.0] - 2026-02-12
+
+### 🐛 Bug Fixes
+
+- Identical spacing & leading([03de596](https://github.com/Multipixelone/typst-turabian/commit/03de596c1b7f4711f2fab1c6bed5cb27c2ab7ca2))
+
 ## [0.2.1] - 2026-02-12
 
 ### 📚 Documentation
