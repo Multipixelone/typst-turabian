@@ -4,7 +4,6 @@
     {
       self,
       nixpkgs,
-      devenv,
       ...
     }@inputs:
     inputs.flake-parts.lib.mkFlake { inherit inputs; } {
@@ -45,14 +44,8 @@
         };
     };
 
-  nixConfig = {
-    extra-trusted-public-keys = "devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw=";
-    extra-substituters = "https://devenv.cachix.org";
-  };
-
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    devenv.url = "github:cachix/devenv";
 
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
