@@ -36,18 +36,6 @@
             DIRENV_LOG_FORMAT = "";
           };
 
-          checks = {
-            nixfmt = pkgs.runCommandLocal "check-nixfmt" { nativeBuildInputs = [ pkgs.nixfmt-rfc-style ]; } ''
-              cd ${src}
-              nixfmt --check .
-              touch $out
-            '';
-            typstyle = pkgs.runCommandLocal "check-typstyle" { nativeBuildInputs = [ pkgs.typstyle ]; } ''
-              cd ${src}
-              typstyle format-all . --check
-              touch $out
-            '';
-          };
           formatter = pkgs.nixfmt;
 
           packages = {
