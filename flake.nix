@@ -12,9 +12,6 @@
         "x86_64-linux"
         "x86_64-darwin"
       ];
-      imports = [
-        inputs.devenv.flakeModule
-      ];
       perSystem =
         {
           pkgs,
@@ -28,12 +25,15 @@
           };
         in
         {
-          devenv.shells.default = {
+
+          devShells.default = pkgs.mkShell {
             packages = [
               pkgs.typst
               pkgs.typstyle
               pkgs.git-cliff
             ];
+            name = "turabian";
+            DIRENV_LOG_FORMAT = "";
           };
 
           formatter = pkgs.nixfmt-rfc-style;
