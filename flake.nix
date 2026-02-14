@@ -29,7 +29,8 @@
 
           devShells.default = pkgs.mkShell {
             packages = [
-              pkgs.typst
+              typstWrapped
+              pkgs.tinymist
               pkgs.typstyle
               pkgs.git-cliff
             ];
