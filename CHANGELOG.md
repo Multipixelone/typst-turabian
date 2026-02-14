@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.4.0] - 2026-02-14
+
+### 🚀 Features
+
+- Wrap a typst package([22bed8c](https://github.com/Multipixelone/typst-turabian/commit/22bed8c9a7fb196c79170d2a829f19907cd98451))
+
+### 🐛 Bug Fixes
+
+- Include wrapped typst in devShell([2e0ff7d](https://github.com/Multipixelone/typst-turabian/commit/2e0ff7db324c5212b9f9505fd066155d75542ae5))
+
 ## [0.3.0] - 2026-02-12
 
 ### 🐛 Bug Fixes
