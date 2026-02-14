@@ -22,6 +22,8 @@
           turabian = pkgs.callPackage ./packages/turabian.nix {
             inherit version src;
           };
+          # wrap package into typst
+          typstWrapped = pkgs.typst.withPackages (ps: [ turabian ]);
         in
         {
 
@@ -33,6 +35,8 @@
             ];
             name = "turabian";
             DIRENV_LOG_FORMAT = "";
+            # set env for tinymist to pickup package
+            TYPST_PACKAGE_CACHE_PATH = "${typstWrapped}/lib/typst/packages";
           };
 
           formatter = pkgs.nixfmt;
@@ -40,6 +44,7 @@
           packages = {
             default = turabian;
             turabian = turabian;
+            typst = typstWrapped;
           };
         };
     };
