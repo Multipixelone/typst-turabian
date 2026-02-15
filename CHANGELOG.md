@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.4.1] - 2026-02-15
+
+### 🚀 Features
+
+- Add template file([cfafe68](https://github.com/Multipixelone/typst-turabian/commit/cfafe684dbc6647a26a8ab340e1430c545f67cd1))
+
+### ⚙️ Miscellaneous Tasks
+
+- Auto-update version references when release is made([9cff0aa](https://github.com/Multipixelone/typst-turabian/commit/9cff0aad4573b2e6ac2a4da3bb7e8abc0a483876))
+
 ## [0.4.0] - 2026-02-14
 
 ### 🚀 Features
