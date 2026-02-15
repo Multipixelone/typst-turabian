@@ -65,11 +65,11 @@ jobs:
 
       - name: Update version in README.md
         run: |
-          sed -i 's/@preview\/turabian:[0-9]\+\.[0-9]\+\.[0-9]\+/@preview\/turabian:${{ steps.next.outputs.version }}/g' README.md
+          sed -i -E 's/@preview\/turabian:[0-9]+\.[0-9]+\.[0-9]+/@preview\/turabian:${{ steps.next.outputs.version }}/g' README.md
 
       - name: Update version in template/main.typ
         run: |
-          sed -i 's/@preview\/turabian:[0-9]\+\.[0-9]\+\.[0-9]\+/@preview\/turabian:${{ steps.next.outputs.version }}/g' template/main.typ
+          sed -i -E 's/@preview\/turabian:[0-9]+\.[0-9]+\.[0-9]+/@preview\/turabian:${{ steps.next.outputs.version }}/g' template/main.typ
 
       - name: Generate changelog
         uses: orhun/git-cliff-action@v4
