@@ -17,7 +17,7 @@ A [Typst](https://typst.app/) template for papers formatted in
 Import the package and call the `turabian` function:
 
 ```typst
-#import "@preview/turabian:0.4.1": turabian
+#import "@preview/turabian:0.4.2": turabian
 
 #show: turabian.with(
   title: "The Role of Architecture in Urban Identity",
@@ -91,7 +91,7 @@ git cliff -o CHANGELOG.md
 ### Typst Universe (recommended)
 
 ```typst
-#import "@preview/turabian:0.4.1": turabian
+#import "@preview/turabian:0.4.2": turabian
 ```
 
 ### Nix

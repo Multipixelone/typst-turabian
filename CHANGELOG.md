@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.4.2] - 2026-02-15
+
+### 🐛 Bug Fixes
+
+- Copy template directory([d30cc2b](https://github.com/Multipixelone/typst-turabian/commit/d30cc2b4a728741f4254a7c6093210b183cd975d))
+
 ## [0.4.1] - 2026-02-15
 
 ### 🚀 Features

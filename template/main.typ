@@ -1,4 +1,4 @@
-#import "@preview/turabian:0.4.1": turabian
+#import "@preview/turabian:0.4.2": turabian
 
 // Get Version from Flake
 #let version = sys.inputs.at("version", default: none)
