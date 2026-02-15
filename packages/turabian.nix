@@ -18,7 +18,7 @@ stdenvNoCC.mkDerivation {
     ''
       runHook preInstall
       mkdir -p ${outDir}
-      cp -r lib.typ typst.toml ${outDir}/
+      cp -r template lib.typ typst.toml ${outDir}/
       if [ -f LICENSE ]; then
         cp LICENSE ${outDir}/
       fi
